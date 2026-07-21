@@ -6,15 +6,15 @@ metadata:
   labels:
     project: roboshop
     environment: dev
-  spec:
-    type: LoadBalancer
-    # Service uses the below labels to select the pods
-    selector:
-      project: roboshop
-      tier: frontend
-      component: frontend
-    ports:
-      - protocol: TCP
-        port: 80 # Service Port
-        targetPort: 80 # Container Port
-        nodePort: 30008
+spec:
+  type: LoadBalancer
+  # Service uses the below labels to select the pods
+  selector:
+    project: roboshop
+    tier: frontend
+    component: frontend
+  ports:
+   - protocol: TCP
+     port: 80 # Service Port
+     targetPort: 80 # Container Port
+     nodePort: 30008
